@@ -1,5 +1,5 @@
-from odoo import SUPERUSER_ID, exceptions, fields, models
-from odoo.tools.translate import _
+from flectra import SUPERUSER_ID, exceptions, fields, models
+from flectra.tools.translate import _
 
 MODULE_NAME = "ir_rule_protected"
 
@@ -35,5 +35,6 @@ class Module(models.Model):
     def button_uninstall(self):
         for r in self:
             if r.name == MODULE_NAME and self.env.uid != SUPERUSER_ID:
-                raise exceptions.Warning(_("Only admin can uninstall the module"))
+                raise exceptions.Warning(
+                    _("Only admin can uninstall the module"))
         return super(Module, self).button_uninstall()

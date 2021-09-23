@@ -1,7 +1,7 @@
-from odoo import SUPERUSER_ID, _, api, models
-from odoo.exceptions import AccessError
+from flectra import SUPERUSER_ID, _, api, models
+from flectra.exceptions import AccessError
 
-from odoo.addons.base.models.res_users import is_reified_group
+from flectra.addons.base.models.res_users import is_reified_group
 
 IR_CONFIG_NAME = "access_restricted.fields_view_get_uid"
 
@@ -12,7 +12,8 @@ class ResUsers(models.Model):
     @api.model
     def fields_view_get(self, view_id=None, view_type="form", **kwargs):
         if view_type == "form":
-            last_uid = self.env["ir.config_parameter"].sudo().get_param(IR_CONFIG_NAME)
+            last_uid = self.env["ir.config_parameter"].sudo(
+            ).get_param(IR_CONFIG_NAME)
             if int(last_uid) != self.env.uid:
                 self.env["res.groups"].sudo()._update_user_groups_view()
 
@@ -23,7 +24,8 @@ class ResUsers(models.Model):
     def write(self, vals):
         for key in vals:
             if is_reified_group(key):
-                self.env["ir.config_parameter"].sudo().set_param(IR_CONFIG_NAME, "0")
+                self.env["ir.config_parameter"].sudo(
+                ).set_param(IR_CONFIG_NAME, "0")
                 break
         return super(ResUsers, self).write(vals)
 
@@ -34,7 +36,8 @@ class ResGroups(models.Model):
     @api.model
     def _update_user_groups_view(self):
         real_uid = (self.env.context or {}).get("uid", self.env.uid)
-        self.env["ir.config_parameter"].sudo().set_param(IR_CONFIG_NAME, real_uid)
+        self.env["ir.config_parameter"].sudo(
+        ).set_param(IR_CONFIG_NAME, real_uid)
         return super(ResGroups, self.sudo())._update_user_groups_view()
 
     @api.model
@@ -45,7 +48,8 @@ class ResGroups(models.Model):
         domain.append(("share", "=", False))
 
         real_uid = (self.env.context or {}).get("uid") or int(
-            self.env["ir.config_parameter"].sudo().get_param(IR_CONFIG_NAME, "0")
+            self.env["ir.config_parameter"].sudo(
+            ).get_param(IR_CONFIG_NAME, "0")
         )
         if real_uid and real_uid != SUPERUSER_ID:
             group_no_one_id = self.env.ref("base.group_no_one").id
@@ -88,7 +92,7 @@ class ResGroups(models.Model):
                 # do nothing with groups if there is no permission to add from settings
                 return
 
-        # in the https://github.com/odoo/odoo/commit/5f12e244f6e57b8edb56788147774150e2ae134d commit
+        # in the https://github.com/flectra/flectra/commit/5f12e244f6e57b8edb56788147774150e2ae134d commit
         # the method was refactored due to a higher performance.
         # Super method lacks of orm part so as consequent ir rules are not checked and we check its conditions manually.
         # We apply super method and check the difference of implied groups,

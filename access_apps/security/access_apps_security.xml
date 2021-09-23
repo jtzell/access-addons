@@ -3,7 +3,7 @@
      Copyright 2018 Ildar Nasyrov <https://it-projects.info/team/iledarn>
      License MIT (https://opensource.org/licenses/MIT).
     -->
-<odoo>
+<flectra>
     <record id="base.access_ir_module_module_group_user" model="ir.model.access">
         <field name="active" eval="False"/>
     </record>
@@ -31,4 +31,4 @@
     <record model="ir.ui.menu" id="base.menu_management">
         <field name="groups_id" eval="[(6,0, [ref('access_apps.group_allow_apps')])]" />
     </record>
-</odoo>
+</flectra>

@@ -2,7 +2,7 @@
 # Copyright 2018 Ildar Nasyrov <https://it-projects.info/team/iledarn>
 # License MIT (https://opensource.org/licenses/MIT).
 
-from odoo import api, models
+from flectra import api, models
 
 
 class ResConfigSettings(models.TransientModel):
@@ -31,7 +31,8 @@ class ResConfigSettings(models.TransientModel):
         # modules: which modules are installed/to install
         classified = self._get_classified_fields()
         for name, module in classified["to_uninstall"]:
-            res[name] = module.state in ("installed", "to install", "to upgrade")
+            res[name] = module.state in (
+                "installed", "to install", "to upgrade")
             if self._fields[name].type == "selection":
                 res[name] = str(int(res[name]))
 
@@ -49,7 +50,8 @@ class ResConfigSettings(models.TransientModel):
                 if module and module.state in ("installed", "to upgrade"):
                     to_uninstall_modules.append((name, module))
 
-        modules = list(set(res["module"]).difference(set(to_uninstall_modules)))
+        modules = list(set(res["module"]).difference(
+            set(to_uninstall_modules)))
 
         res["module"] = modules
         res["to_uninstall"] = to_uninstall_modules

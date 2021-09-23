@@ -1,6 +1,6 @@
 # Copyright 2018 Ivan Yelizariev <https://it-projects.info/team/yelizariev>
 # License MIT (https://opensource.org/licenses/MIT).
-from odoo.tests import common
+from flectra.tests import common
 
 
 @common.tagged("post_install", "-at_install")

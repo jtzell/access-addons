@@ -1,6 +1,6 @@
-from odoo.tests.common import TransactionCase, tagged
+from flectra.tests.common import TransactionCase, tagged
 
-from odoo.addons.base.models.res_users import name_selection_groups
+from flectra.addons.base.models.res_users import name_selection_groups
 
 
 @tagged("at_install", "post_install")
@@ -28,6 +28,7 @@ class TestFieldsGet(TransactionCase):
 
         demo_user.write({"groups_id": [(4, group_system.id)]})
 
-        sel_groups = name_selection_groups([group_erp_manager.id, group_system.id])
+        sel_groups = name_selection_groups(
+            [group_erp_manager.id, group_system.id])
         res = self.env["res.users"].with_user(demo_user).fields_get()
         self.assertTrue(res.get(sel_groups))

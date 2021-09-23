@@ -11,7 +11,7 @@
     "application": False,
     "author": "IT-Projects LLC, Eugene Molotov",
     "support": "apps@it-projects.info",
-    "website": "https://apps.odoo.com/apps/modules/13.0/access_limit_max_users/",
+    "website": "https://apps.flectra.com/apps/modules/13.0/access_limit_max_users/",
     "license": "Other OSI approved licence",  # MIT
     # "price": 9.00,
     # "currency": "EUR",

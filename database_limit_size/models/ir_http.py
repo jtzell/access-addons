@@ -3,8 +3,8 @@
 
 import os
 
-from odoo import models
-from odoo.tools import human_size
+from flectra import models
+from flectra.tools import human_size
 
 
 # https://stackoverflow.com/a/1392549
@@ -26,17 +26,20 @@ class IrHttp(models.AbstractModel):
 
         Config = self.env["ir.config_parameter"].sudo()
         try:
-            database_limit_size = int(Config.get_param("database_limit_size", 0))
+            database_limit_size = int(
+                Config.get_param("database_limit_size", 0))
         except ValueError:
             return res
 
         if not database_limit_size:
             return res
 
-        self.env.cr.execute("select pg_database_size(%s)", [self.env.cr.dbname])
+        self.env.cr.execute("select pg_database_size(%s)",
+                            [self.env.cr.dbname])
         database_size = self.env.cr.fetchone()[0]
 
-        filestore_size = get_directory_size(self.env["ir.attachment"]._filestore())
+        filestore_size = get_directory_size(
+            self.env["ir.attachment"]._filestore())
 
         total_size = database_size + filestore_size
         if total_size > database_limit_size:

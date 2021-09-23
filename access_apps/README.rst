@@ -28,4 +28,4 @@ Further information
 ===================
 
 
-Tested on `Odoo 13.0 <https://github.com/odoo/odoo/commit/b13bec4d20dfe36f1baa923719e37ea6bbe18a7d>`_
+Tested on `Flectra 13.0 <https://github.com/flectra/flectra/commit/b13bec4d20dfe36f1baa923719e37ea6bbe18a7d>`_

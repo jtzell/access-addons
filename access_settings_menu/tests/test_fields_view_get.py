@@ -1,6 +1,6 @@
-from odoo.tests import common
+from flectra.tests import common
 
-from odoo.addons.access_restricted.tests.test_fields_view_get import (
+from flectra.addons.access_restricted.tests.test_fields_view_get import (
     TestFieldsViewGet as TestFieldsViewGetBase,
 )
 

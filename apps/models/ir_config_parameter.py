@@ -1,4 +1,4 @@
-from odoo import api, models
+from flectra import api, models
 
 KEY = "apps.super_app_prefix"
 

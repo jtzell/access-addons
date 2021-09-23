@@ -5,12 +5,12 @@
 Installation
 ============
 
-Follow insturction of the module `Quick Auth (Master) <https://apps.odoo.com/apps/modules/13.0/auth_quick_master/>`__
+Follow insturction of the module `Quick Auth (Master) <https://apps.flectra.com/apps/modules/13.0/auth_quick_master/>`__
 
 Configuration
 =============
 
-* `Activate Developer Mode <https://odoo-development.readthedocs.io/en/latest/odoo/usage/debug-mode.html>`__
+* `Activate Developer Mode <https://flectra-development.readthedocs.io/en/latest/flectra/usage/debug-mode.html>`__
 * Open menu ``[[ Settings ]] >> Technical >> Parameters >> System Parameters``
 * Create following key-value records:
 
@@ -20,4 +20,4 @@ Configuration
 Usage
 =====
 
-Follow instruction of the module `Quick Auth (Master) <https://apps.odoo.com/apps/modules/13.0/auth_quick_master/>`__
+Follow instruction of the module `Quick Auth (Master) <https://apps.flectra.com/apps/modules/13.0/auth_quick_master/>`__

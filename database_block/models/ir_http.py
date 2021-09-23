@@ -1,7 +1,7 @@
 # Copyright 2020 Eugene Molotov <https://it-projects.info/team/em230418>
 # License MIT (https://opensource.org/licenses/MIT).
 
-from odoo import SUPERUSER_ID, models
+from flectra import SUPERUSER_ID, models
 
 
 class IrHttp(models.AbstractModel):

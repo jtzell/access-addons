@@ -35,9 +35,9 @@ Contributors
 Further information
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/13.0/database_limit_size/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/13.0/database_limit_size/
 
 
 Notifications on updates: `via Atom <https://github.com/it-projects-llc/access-addons/commits/13.0/database_limit_size.atom>`_, `by Email <https://blogtrottr.com/?subscribe=https://github.com/it-projects-llc/access-addons/commits/13.0/database_limit_size.atom>`_
 
-Tested on `Odoo 13.0 <https://github.com/odoo/odoo/commit/41f72d9628b467f82da0fafc15651002a49b10ad>`_
+Tested on `Flectra 13.0 <https://github.com/flectra/flectra/commit/41f72d9628b467f82da0fafc15651002a49b10ad>`_

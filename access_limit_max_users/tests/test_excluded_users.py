@@ -1,7 +1,7 @@
 # Copyright 2020 Eugene Molotov <https://it-projects.info/team/em230418>
 # License MIT (https://opensource.org/licenses/MIT).
-from odoo import exceptions
-from odoo.tests import common
+from flectra import exceptions
+from flectra.tests import common
 
 
 @common.tagged("post_install", "-at_install")
@@ -15,7 +15,8 @@ class TestExcludedUsers(common.TransactionCase):
             [("is_excluded_from_limiting", "=", False)]
         )
 
-        vals = {"name": login, "login": login, "is_excluded_from_limiting": True}
+        vals = {"name": login, "login": login,
+                "is_excluded_from_limiting": True}
 
         with self.assertRaises(exceptions.ValidationError):
             Users.create(vals)

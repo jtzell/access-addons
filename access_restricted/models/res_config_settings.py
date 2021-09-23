@@ -1,6 +1,6 @@
-from odoo import SUPERUSER_ID, api, models
-from odoo.tools import ustr
-from odoo.tools.translate import _
+from flectra import SUPERUSER_ID, api, models
+from flectra.tools import ustr
+from flectra.tools.translate import _
 
 
 class ResConfigSettings(models.TransientModel):
@@ -53,5 +53,6 @@ class ResConfigSettings(models.TransientModel):
         return fields
 
     def execute(self):
-        res = super(ResConfigSettings, self.with_context({"config": self})).execute()
+        res = super(ResConfigSettings, self.with_context(
+            {"config": self})).execute()
         return res

@@ -6,8 +6,8 @@ from datetime import datetime
 
 from mako.template import Template
 
-from odoo import models
-from odoo.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
+from flectra import models
+from flectra.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
 
 _logger = logging.getLogger(__name__)
 DATABASE_BLOCK_MESSAGE_HTML_TEMPLATE = Template(
@@ -24,11 +24,12 @@ class IrHttp(models.AbstractModel):
 
         now = datetime.now()
         Config = self.env["ir.config_parameter"].sudo()
-        database_expiration_date = Config.get_param("database_expiration_date", None)
+        database_expiration_date = Config.get_param(
+            "database_expiration_date", None)
 
         # Note:
         # DO NOT USE database.expiration_date (with dot)
-        # it will be overwritten here: https://github.com/odoo/odoo/blob/f9a559f5455a4b964de9a99ff05756302071e959/addons/mail/models/update.py#L114
+        # it will be overwritten here: https://github.com/flectra/flectra/blob/f9a559f5455a4b964de9a99ff05756302071e959/addons/mail/models/update.py#L114
 
         if database_expiration_date:
             database_expiration_date = datetime.strptime(

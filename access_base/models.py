@@ -1,10 +1,10 @@
 from lxml import etree
 from lxml.builder import E
 
-from odoo import api, fields, models
-from odoo.tools.translate import _
+from flectra import api, fields, models
+from flectra.tools.translate import _
 
-from odoo.addons.base.res.res_users import name_boolean_group, name_selection_groups
+from flectra.addons.base.res.res_users import name_boolean_group, name_selection_groups
 
 
 class GroupsView(models.Model):
@@ -32,7 +32,8 @@ class GroupsView(models.Model):
             xml1.append(E.separator(string=_("Application"), colspan="2"))
 
             xml3 = []
-            xml3.append(E.separator(string=_("Custom User Groups"), colspan="4"))
+            xml3.append(E.separator(
+                string=_("Custom User Groups"), colspan="4"))
 
             for app, kind, gs in self.get_groups_by_application():
                 xml = None
@@ -68,12 +69,14 @@ class GroupsView(models.Model):
                     # application separator with boolean fields
                     app_name = app and app.name or _("Other")
                     if not custom:
-                        xml.append(E.separator(string=app_name, colspan="4", **attrs))
+                        xml.append(E.separator(
+                            string=app_name, colspan="4", **attrs))
                     for g in gs:
                         field_name = name_boolean_group(g.id)
                         if g == group_no_one:
                             # make the group_no_one invisible in the form view
-                            xml.append(E.field(name=field_name, invisible="1", **attrs))
+                            xml.append(E.field(name=field_name,
+                                       invisible="1", **attrs))
                         else:
                             xml.append(E.field(name=field_name, **attrs))
 

@@ -9,7 +9,7 @@
 The module shows only custom apps to user. To use this feature, create some number of modules with prefix ``super_app_`` in technical name (e.g. super_app_pos, super_app_hr, etc). Then a user will be asked to work with applications from that list only and doesn't care about dozen of technical modules, which custom applications consist of.
 
 When user need to uninstall custom app, the module will uninstall dependencies
-too. (By default odoo uninstall only modules that depend on the module and
+too. (By default flectra uninstall only modules that depend on the module and
 don't touch modules that the module has in dependencies). For example, if we
 have following installed custom apps:
 
@@ -62,7 +62,7 @@ Contributors
 Further information
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/10.0/apps/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/10.0/apps/
 
 
-Tested on `10.0 <https://github.com/odoo/odoo/commit/87184d0894fdb7444cc0d4b6e7028f1f97a7c4f7>`_
+Tested on `10.0 <https://github.com/flectra/flectra/commit/87184d0894fdb7444cc0d4b6e7028f1f97a7c4f7>`_

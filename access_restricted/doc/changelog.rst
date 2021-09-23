@@ -1,7 +1,7 @@
 `1.3.5`
 -------
 
-- **Fix:** Fixed possibility to write inappropriate groups directly via write method after some odoo updates https://github.com/odoo/odoo/commit/5f12e244f6e57b8edb56788147774150e2ae134d
+- **Fix:** Fixed possibility to write inappropriate groups directly via write method after some flectra updates https://github.com/flectra/flectra/commit/5f12e244f6e57b8edb56788147774150e2ae134d
 
 `1.3.4`
 -------
@@ -42,7 +42,7 @@
 `1.0.1`
 -------
 
-- FIX: update to the latest odoo 9.0 version due to this comit from Mar 24, 2016 https://github.com/odoo/odoo/commit/40a299c580c4608edab8781fda4e66f39611543b
+- FIX: update to the latest flectra 9.0 version due to this comit from Mar 24, 2016 https://github.com/flectra/flectra/commit/40a299c580c4608edab8781fda4e66f39611543b
 
 `1.0.0`
 -------

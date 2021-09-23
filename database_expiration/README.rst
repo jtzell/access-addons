@@ -35,9 +35,9 @@ Contributors
 Further information
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/13.0/database_expiration/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/13.0/database_expiration/
 
 
 Notifications on updates: `via Atom <https://github.com/it-projects-llc/access-addons/commits/13.0/database_expiration.atom>`_, `by Email <https://blogtrottr.com/?subscribe=https://github.com/it-projects-llc/access-addons/commits/13.0/database_expiration.atom>`_
 
-Tested on `Odoo 12.0 <https://github.com/odoo/odoo/commit/6a57ad66b8374966ba7011e34cec20f6344f4f6d>`_
+Tested on `Flectra 12.0 <https://github.com/flectra/flectra/commit/6a57ad66b8374966ba7011e34cec20f6344f4f6d>`_

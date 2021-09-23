@@ -7,8 +7,8 @@ import urllib.parse
 import requests
 import werkzeug
 
-from odoo import http
-from odoo.http import request
+from flectra import http
+from flectra.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -31,7 +31,8 @@ class AuthQuickMaster(http.Controller):
             user = request.env["res.users"].sudo().browse(int(build_user_id))
             build_login = user.login
         else:
-            user = request.env["res.users"].sudo().search([("login", "=", build_login)])
+            user = request.env["res.users"].sudo().search(
+                [("login", "=", build_login)])
             build_user_id = user.id
 
         _logger.debug(
@@ -61,21 +62,24 @@ class AuthQuickMaster(http.Controller):
     @http.route("/auth_quick/check-token", type="http", auth="public")
     def check_token(self, token, test_cr=False):
         master_url = self.get_master_url()
-        url = urllib.parse.urljoin(master_url, "/auth_quick_master/check-token")
+        url = urllib.parse.urljoin(
+            master_url, "/auth_quick_master/check-token")
         res = requests.post(
             url,
             data=json.dumps({"params": {"token": token}}),
             headers={"Content-Type": "application/json"},
         )
-        _logger.debug("Response from master odoo: %s", res.text)
+        _logger.debug("Response from master flectra: %s", res.text)
         result = res.json().get("result")
         if not result.get("success"):
             return "Wrong token"
 
         build_login = result["data"]["build_login"]
-        user = request.env["res.users"].sudo().search([("login", "=", build_login)])
+        user = request.env["res.users"].sudo().search(
+            [("login", "=", build_login)])
         user.write({"auth_quick_token": token})
-        _logger.info("Successful Authentication as %s via token %s", build_login, token)
+        _logger.info("Successful Authentication as %s via token %s",
+                     build_login, token)
 
         if test_cr is False:
             # A new cursor is used to authenticate the user and it cannot see the

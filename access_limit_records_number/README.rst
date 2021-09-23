@@ -28,7 +28,7 @@ Contributors
 
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/13.0/access_limit_records_number/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/13.0/access_limit_records_number/
 
 
-Tested on `Odoo 13.0 <https://github.com/odoo/odoo/commit/991c3392708946fdf9973d18e8c29469fa21eed9>`_
+Tested on `Flectra 13.0 <https://github.com/flectra/flectra/commit/991c3392708946fdf9973d18e8c29469fa21eed9>`_

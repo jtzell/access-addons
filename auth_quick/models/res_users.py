@@ -2,8 +2,8 @@
 # License MIT (https://opensource.org/licenses/MIT).
 import logging
 
-from odoo import fields, models
-from odoo.exceptions import AccessDenied
+from flectra import fields, models
+from flectra.exceptions import AccessDenied
 
 _logger = logging.getLogger(__name__)
 

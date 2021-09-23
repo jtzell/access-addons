@@ -17,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import SUPERUSER_ID, api, fields, models
+from flectra import SUPERUSER_ID, api, fields, models
 
 
 class ResGroups(models.Model):

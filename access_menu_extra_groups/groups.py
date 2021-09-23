@@ -1,4 +1,4 @@
-from odoo import SUPERUSER_ID, api, fields, models
+from flectra import SUPERUSER_ID, api, fields, models
 
 
 class IrUiMenuExtra(models.Model):

@@ -21,7 +21,7 @@
 `1.3.0`
 -------
 
-- **Fix:** the "Allow install apps" group is now implies "Administration: Settings" ("base.group_system") since in Odoo 11.0 only group_system users can install apps
+- **Fix:** the "Allow install apps" group is now implies "Administration: Settings" ("base.group_system") since in Flectra 11.0 only group_system users can install apps
 
 `1.2.0`
 -------
@@ -33,5 +33,5 @@
 `1.0.1`
 -------
 
-- **Fix:** updates for recent odoo 9.0
+- **Fix:** updates for recent flectra 9.0
 - **Improvement:** apps dashboard can be showed if user has access 'Show Apps Menu'

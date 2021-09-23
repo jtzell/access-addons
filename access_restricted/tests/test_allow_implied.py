@@ -1,5 +1,5 @@
-from odoo.exceptions import AccessError
-from odoo.tests.common import TransactionCase, tagged
+from flectra.exceptions import AccessError
+from flectra.tests.common import TransactionCase, tagged
 
 
 @tagged("at_install", "post_install")
@@ -37,11 +37,13 @@ class TestAllowImplied(TransactionCase):
 
         # check that the field is readonly
         self.assertTrue(
-            test_config_settings.fields_get()["group_private_addresses"]["readonly"]
+            test_config_settings.fields_get(
+            )["group_private_addresses"]["readonly"]
         )
         # check that test group hasn't got appended to classified
         self.assertNotIn(
-            "group_private_addresses", self._get_classified_groups(test_config_settings)
+            "group_private_addresses", self._get_classified_groups(
+                test_config_settings)
         )
 
         group_allow = self.env.ref(
@@ -51,11 +53,13 @@ class TestAllowImplied(TransactionCase):
 
         # check that now the field is not readonly
         self.assertFalse(
-            test_config_settings.fields_get()["group_private_addresses"]["readonly"]
+            test_config_settings.fields_get(
+            )["group_private_addresses"]["readonly"]
         )
         # check that now the group is in classified
         self.assertIn(
-            "group_private_addresses", self._get_classified_groups(test_config_settings)
+            "group_private_addresses", self._get_classified_groups(
+                test_config_settings)
         )
 
         self.assertFalse(

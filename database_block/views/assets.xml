@@ -1,6 +1,6 @@
 <!-- Copyright 2020 Eugene Molotov <https://it-projects.info/team/em230418>
      License MIT (https://opensource.org/licenses/MIT). -->
-<odoo>
+<flectra>
     <template id="saas_expiration_build" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script
@@ -14,4 +14,4 @@
             />
         </xpath>
     </template>
-</odoo>
+</flectra>

@@ -6,7 +6,7 @@
 `1.3.2`
 -------
 
-- **Fix**: Models without group binded rules were then wrongly reduced to an 'AND FALSE' condition. After https://github.com/odoo/odoo/commit/023dfaeb6b9499943315358edaa01c8f823ee695
+- **Fix**: Models without group binded rules were then wrongly reduced to an 'AND FALSE' condition. After https://github.com/flectra/flectra/commit/023dfaeb6b9499943315358edaa01c8f823ee695
 
 `1.3.1`
 -------
@@ -21,7 +21,7 @@
 `1.2.0`
 -------
 
-- **Add:** Use user's **Current Backend Website** from ``web_website`` module  on evaluating website rules in Odoo backend
+- **Add:** Use user's **Current Backend Website** from ``web_website`` module  on evaluating website rules in Flectra backend
 
 `1.1.0`
 -------

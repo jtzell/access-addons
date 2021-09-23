@@ -7,7 +7,7 @@ Configuration
 
 To change prefix from default value do as followings
 
-* `Enable technical features <https://odoo-development.readthedocs.io/en/latest/odoo/usage/technical-features.html>`__
+* `Enable technical features <https://flectra-development.readthedocs.io/en/latest/flectra/usage/technical-features.html>`__
 * Open menu ``Settings / Technical / System Parameters``
 * Open ``apps.super_app_prefix``
 * Click ``[Edit]``

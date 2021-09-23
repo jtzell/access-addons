@@ -5,7 +5,7 @@
 Installation
 ============
 
-* `Install <https://odoo-development.readthedocs.io/en/latest/odoo/usage/install-module.html>`__ this module in a usual way
+* `Install <https://flectra-development.readthedocs.io/en/latest/flectra/usage/install-module.html>`__ this module in a usual way
 
 Backend Usage
 =============
@@ -25,10 +25,10 @@ If you have a model accessible through a website, you can apply restriction in a
 ::
 
  <?xml version="1.0" encoding="utf-8"?>
- <odoo>
+ <flectra>
    <record id="blog_rule_all" model="ir.rule">
      <field name="name">Blogs available only for specifed websites</field>
      <field name="model_id" ref="model_blog_blog"/>
      <field name="domain_force">[('website_ids', 'in', website_ids)]</field>
    </record>
- </odoo>
+ </flectra>

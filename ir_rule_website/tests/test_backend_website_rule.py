@@ -1,7 +1,7 @@
 # Copyright 2020 Ivan Yelizariev
 # License MIT (https://opensource.org/licenses/MIT).
-from odoo.exceptions import AccessError
-from odoo.tests.common import TransactionCase
+from flectra.exceptions import AccessError
+from flectra.tests.common import TransactionCase
 
 # TODO: the tests are quick fixes of the tests for 1.x.x version and need to be cleanup
 
@@ -30,10 +30,12 @@ class TestBackendWebsiteRule(TransactionCase):
 
         User = self.env["res.users"]
         self.user2 = User.create(
-            {"name": "user2", "login": "user2", "backend_website_id": self.website1.id}
+            {"name": "user2", "login": "user2",
+                "backend_website_id": self.website1.id}
         )
         self.user3 = User.create(
-            {"name": "user3", "login": "user3", "backend_website_id": self.website2.id}
+            {"name": "user3", "login": "user3",
+                "backend_website_id": self.website2.id}
         )
 
         # case for an object references another object
@@ -97,7 +99,8 @@ class TestBackendWebsiteRule(TransactionCase):
 
         self.env["res.company"].invalidate_cache()
         self.user1.write(
-            {"company_id": self.company2.id, "company_ids": [(4, self.company2.id, 0)]}
+            {"company_id": self.company2.id,
+                "company_ids": [(4, self.company2.id, 0)]}
         )
         companies = (
             self.env["res.company"]

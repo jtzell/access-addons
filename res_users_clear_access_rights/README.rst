@@ -23,6 +23,6 @@ Contributors
 Further information
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/13.0/res_users_clear_access_rights/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/13.0/res_users_clear_access_rights/
 
-Tested on `Odoo 13.0 <https://github.com/odoo/odoo/commit/05551281085fd12f83904305aa7bf259f663a834>`_
+Tested on `Flectra 13.0 <https://github.com/flectra/flectra/commit/05551281085fd12f83904305aa7bf259f663a834>`_

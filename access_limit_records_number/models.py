@@ -1,6 +1,6 @@
-from odoo import api, exceptions, fields, models
-from odoo.tools.safe_eval import safe_eval
-from odoo.tools.translate import _
+from flectra import api, exceptions, fields, models
+from flectra.tools.safe_eval import safe_eval
+from flectra.tools.translate import _
 
 
 class BaseLimitRecordsNumber(models.Model):
@@ -27,7 +27,8 @@ class BaseLimitRecordsNumber(models.Model):
         """ Get parameters and verify. Raise exception if limit """
         model_name = self.env.context["active_model"]
         for rule in self.search([("model_id.model", "=", model_name)]):
-            records_count = self.env[model_name].search_count(safe_eval(rule.domain))
+            records_count = self.env[model_name].search_count(
+                safe_eval(rule.domain))
             if records_count > rule.max_records:
                 raise exceptions.Warning(
                     _(

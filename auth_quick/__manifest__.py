@@ -2,7 +2,7 @@
 # License MIT (https://opensource.org/licenses/MIT).
 {
     "name": """Quick Auth""",
-    "summary": """Odoo Authentication for developers / testers / support team""",
+    "summary": """Flectra Authentication for developers / testers / support team""",
     "category": "Extra Tools",
     # "live_test_url": "http://apps.it-projects.info/shop/product/DEMO-URL?version=12.0",
     "images": ["images/icon.png"],

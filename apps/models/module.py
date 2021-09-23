@@ -1,10 +1,11 @@
-from odoo import api, fields, models
+from flectra import api, fields, models
 
 
 class Module(models.Model):
     _inherit = "ir.module.module"
 
-    is_super_app = fields.Char("Super App", compute="_compute_is_super_app", store=True)
+    is_super_app = fields.Char(
+        "Super App", compute="_compute_is_super_app", store=True)
 
     @api.model
     def get_super_app_prefix(self):

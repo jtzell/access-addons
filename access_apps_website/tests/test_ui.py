@@ -1,6 +1,6 @@
 # Copyright 2018 Rafis bikbov <https://it-projects.info/team/RafiZz>
 # License MIT (https://opensource.org/licenses/MIT).
-from odoo.tests import common, tagged
+from flectra.tests import common, tagged
 
 
 @tagged("at_install", "post_install")
@@ -18,7 +18,7 @@ class TestUI(common.HttpCase):
         tour = "access_apps_website.tour"
         self.phantom_js(
             "/web",
-            "odoo.__DEBUG__.services['web_tour.tour']" ".run('%s')" % tour,
-            "odoo.__DEBUG__.services['web_tour.tour']" ".tours['%s'].ready" % tour,
+            "flectra.__DEBUG__.services['web_tour.tour']" ".run('%s')" % tour,
+            "flectra.__DEBUG__.services['web_tour.tour']" ".tours['%s'].ready" % tour,
             login="demo",
         )
